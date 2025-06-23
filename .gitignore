@@ -1,1 +1,4 @@
 *.csv
+mni/
+data/
+AAL3/
