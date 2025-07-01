@@ -76,3 +76,56 @@ _, p_value_tau_rmse = stats.ttest_rel(rmse_stl_tau_test, rmse_mtl_tau_test)
 print(f"p-value based on RMSE for STL vs MTL ABETA prediction: {p_value_abeta_rmse:2f}")
 print(f"p-value based on RMSE for STL vs MTL PTAU prediction: {p_value_ptau_rmse:2f}")
 print(f"p-value based on RMSE for STL vs MTL TAU prediction: {p_value_tau_rmse:2f}")
+
+# p-value based on R2 score for STL vs MTL ABETA prediction: 0.504942
+# p-value based on R2 score for STL vs MTL PTAU prediction: 0.136235
+# p-value based on R2 score for STL vs MTL TAU prediction: 0.158651
+# p-value based on MSE for STL vs MTL ABETA prediction: 0.469156
+# p-value based on MSE for STL vs MTL PTAU prediction: 0.209377
+# p-value based on MSE for STL vs MTL TAU prediction: 0.739685
+# p-value based on RMSE for STL vs MTL ABETA prediction: 0.469862
+# p-value based on RMSE for STL vs MTL PTAU prediction: 0.208797
+# p-value based on RMSE for STL vs MTL TAU prediction: 0.741932
+
+r2_mean_abeta_stl, r2_error_bar_abeta_stl = stats.tmean(r2_stl_abeta_train), stats.sem(r2_stl_abeta_train)
+r2_mean_abeta_mtl, r2_error_bar_abeta_mtl = stats.tmean(r2_mtl_abeta_train), stats.sem(r2_mtl_abeta_train)
+r2_mean_ptau_stl, r2_error_bar_ptau_stl = stats.tmean(r2_stl_ptau_train), stats.sem(r2_stl_ptau_train)
+r2_mean_ptau_mtl, r2_error_bar_ptau_mtl = stats.tmean(r2_mtl_ptau_train), stats.sem(r2_mtl_ptau_train)
+r2_mean_tau_stl, r2_error_bar_tau_stl = stats.tmean(r2_stl_tau_train), stats.sem(r2_stl_tau_train)
+r2_mean_tau_mtl, r2_error_bar_tau_mtl = stats.tmean(r2_mtl_tau_train), stats.sem(r2_mtl_tau_train)
+
+mse_mean_abeta_stl, mse_error_bar_abeta_stl = stats.tmean(mse_stl_abeta_train), stats.sem(mse_stl_abeta_train)
+mse_mean_abeta_mtl, mse_error_bar_abeta_mtl = stats.tmean(mse_mtl_abeta_train), stats.sem(mse_mtl_abeta_train)
+mse_mean_ptau_stl, mse_error_bar_ptau_stl = stats.tmean(mse_stl_ptau_train), stats.sem(mse_stl_ptau_train)
+mse_mean_ptau_mtl, mse_error_bar_ptau_mtl = stats.tmean(mse_mtl_ptau_train), stats.sem(mse_mtl_ptau_train)
+mse_mean_tau_stl, mse_error_bar_tau_stl = stats.tmean(mse_stl_tau_train), stats.sem(mse_stl_tau_train)
+mse_mean_tau_mtl, mse_error_bar_tau_mtl = stats.tmean(mse_mtl_tau_train), stats.sem(mse_mtl_tau_train)
+
+rmse_mean_abeta_stl, rmse_error_bar_abeta_stl = stats.tmean(rmse_stl_abeta_train), stats.sem(rmse_stl_abeta_train)
+rmse_mean_abeta_mtl, rmse_error_bar_abeta_mtl = stats.tmean(rmse_mtl_abeta_train), stats.sem(rmse_mtl_abeta_train)
+rmse_mean_ptau_stl, rmse_error_bar_ptau_stl = stats.tmean(rmse_stl_ptau_train), stats.sem(rmse_stl_ptau_train)
+rmse_mean_ptau_mtl, rmse_error_bar_ptau_mtl = stats.tmean(rmse_mtl_ptau_train), stats.sem(rmse_mtl_ptau_train)
+rmse_mean_tau_stl, rmse_error_bar_tau_stl = stats.tmean(rmse_stl_tau_train), stats.sem(rmse_stl_tau_train)
+rmse_mean_tau_mtl, rmse_error_bar_tau_mtl = stats.tmean(rmse_mtl_tau_train), stats.sem(rmse_mtl_tau_train)
+
+print('' + '-' * 50)
+print(f"R2 ABETA STL: {r2_mean_abeta_stl:.4f} ± {r2_error_bar_abeta_stl:.4f}")
+print(f"R2 ABETA MTL: {r2_mean_abeta_mtl:.4f} ± {r2_error_bar_abeta_mtl:.4f}")
+print(f"R2 PTAU STL: {r2_mean_ptau_stl:.4f} ± {r2_error_bar_ptau_stl:.4f}")
+print(f"R2 PTAU MTL: {r2_mean_ptau_mtl:.4f} ± {r2_error_bar_ptau_mtl:.4f}")
+print(f"R2 TAU STL: {r2_mean_tau_stl:.4f} ± {r2_error_bar_tau_stl:.4f}")
+print(f"R2 TAU MTL: {r2_mean_tau_mtl:.4f} ± {r2_error_bar_tau_mtl:.4f}")
+print('' + '-' * 50)
+print(f"MSE ABETA STL: {mse_mean_abeta_stl:.4f} ± {mse_error_bar_abeta_stl:.4f}")
+print(f"MSE ABETA MTL: {mse_mean_abeta_mtl:.4f} ± {mse_error_bar_abeta_mtl:.4f}")
+print(f"MSE PTAU STL: {mse_mean_ptau_stl:.4f} ± {mse_error_bar_ptau_stl:.4f}")
+print(f"MSE PTAU MTL: {mse_mean_ptau_mtl:.4f} ± {mse_error_bar_ptau_mtl:.4f}")
+print(f"MSE TAU STL: {mse_mean_tau_stl:.4f} ± {mse_error_bar_tau_stl:.4f}")
+print(f"MSE TAU MTL: {mse_mean_tau_mtl:.4f} ± {mse_error_bar_tau_mtl:.4f}")
+print('' + '-' * 50)
+print(f"RMSE ABETA STL: {rmse_mean_abeta_stl:.4f} ± {rmse_error_bar_abeta_stl:.4f}")
+print(f"RMSE ABETA MTL: {rmse_mean_abeta_mtl:.4f} ± {rmse_error_bar_abeta_mtl:.4f}")
+print(f"RMSE PTAU STL: {rmse_mean_ptau_stl:.4f} ± {rmse_error_bar_ptau_stl:.4f}")
+print(f"RMSE PTAU MTL: {rmse_mean_ptau_mtl:.4f} ± {rmse_error_bar_ptau_mtl:.4f}")
+print(f"RMSE TAU STL: {rmse_mean_tau_stl:.4f} ± {rmse_error_bar_tau_stl:.4f}")
+print(f"RMSE TAU MTL: {rmse_mean_tau_mtl:.4f} ± {rmse_error_bar_tau_mtl:.4f}")
