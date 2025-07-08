@@ -1,131 +1,331 @@
 import scipy.stats as stats
 
-r2_stl_abeta_train = [0.784175, 0.798659, 0.797461]
-r2_stl_abeta_test = [0.789566, 0.743636, 0.746307]
+accuracy_stl_aplus_train = [0.8387096774193549, 0.8387096774193549, 0.8594470046082949]
+precision_stl_aplus_train = [0.865, 0.8686868686868687, 0.8767772511848341]
+recall_stl_aplus_train = [0.8009259259259259, 0.7962962962962963, 0.8409090909090909]
+f1_stl_aplus_train = [0.8317307692307693, 0.8309178743961353, 0.8584686774941995]
+auroc_stl_aplus_train = [0.8385363574583758, 0.8385151206252124, 0.8597068819031436]
 
-mse_stl_abeta_train = [44672.107, 41560.402, 42114.983]
-mse_stl_abeta_test = [45510.740, 57900.466, 55692.319]
+accuracy_stl_aplus_test = [0.8440366972477065, 0.7522935779816514, 0.8073394495412844]
+precision_stl_aplus_test = [0.8723404255319149, 0.7551020408163265, 0.8]
+recall_stl_aplus_test = [0.7884615384615384, 0.7115384615384616, 0.75]
+f1_stl_aplus_test = [0.8282828282828283, 0.7326732673267328, 0.7741935483870969]
+auroc_stl_aplus_test = [0.8415991902834007, 0.750506072874494, 0.8012295081967213]
 
-rmse_stl_abeta_train = [211.358, 203.864, 205.219]
-rmse_stl_abeta_test = [213.332, 240.625, 235.992]
 
-r2_stl_ptau_train = [0.574860, 0.576860, 0.569942]
-r2_stl_ptau_test = [0.519476, 0.506013, 0.540822]
+accuracy_stl_tplus_train = [0.9285714285714286, 0.9124423963133641, 0.8778801843317973]
+precision_stl_tplus_train = [0.9365853658536586, 0.9158415841584159, 0.905]
+recall_stl_tplus_train = [0.9142857142857143, 0.8980582524271845, 0.8418604651162791]
+f1_stl_tplus_train = [0.9253012048192771, 0.9068627450980392, 0.8722891566265061]
+auroc_stl_tplus_train = [0.9281249999999999, 0.9117484244592062, 0.8775512371243495]
 
-mse_stl_ptau_train = [0.106090, 0.106979, 0.103773]
-mse_stl_ptau_test = [0.100184, 0.096643, 0.109407]
+accuracy_stl_tplus_test = [0.8440366972477065, 0.8532110091743119, 0.8899082568807339]
+precision_stl_tplus_test = [0.8541666666666666, 0.8679245283018868, 0.8863636363636364]
+recall_stl_tplus_test = [0.803921568627451, 0.8363636363636363, 0.8478260869565217]
+f1_stl_tplus_test = [0.8282828282828283, 0.8518518518518519, 0.8666666666666666]
+auroc_stl_tplus_test = [0.8416159567275187, 0.8533670033670033, 0.8842305037957212]
 
-rmse_stl_ptau_train = [0.325714, 0.327077, 0.322139]
-rmse_stl_ptau_test = [0.316519, 0.310875, 0.330767]
 
-r2_stl_tau_train = [0.492460, 0.467130, 0.487419]
-r2_stl_tau_test = [0.401030, 0.509549, 0.419473]
+accuracy_stl_nplus_train = [0.9262672811059908, 0.8986175115207373, 0.8963133640552995]
+precision_stl_nplus_train = [0.9329896907216495, 0.8855721393034826, 0.8994974874371859]
+recall_stl_nplus_train = [0.905, 0.8944723618090452, 0.8774509803921569]
+f1_stl_nplus_train = [0.918781725888325, 0.89, 0.8883374689826303]
+auroc_stl_nplus_train = [0.9247222222222222, 0.8983000106917566, 0.8952472293265132]
 
-mse_stl_tau_train = [0.101919, 0.105006, 0.105615]
-mse_stl_tau_test = [0.112500, 0.100205, 0.097780]
+accuracy_stl_nplus_test = [0.8165137614678899, 0.8532110091743119, 0.944954128440367]
+precision_stl_nplus_test = [0.8409090909090909, 0.8431372549019608, 0.9347826086956522]
+recall_stl_nplus_test = [0.74, 0.8431372549019608, 0.9347826086956522]
+f1_stl_nplus_test = [0.7872340425531915, 0.8431372549019607, 0.9347826086956522]
+auroc_stl_nplus_test = [0.810677966101695, 0.8526031102096011, 0.9435817805383023]
 
-rmse_stl_tau_train = [0.319248, 0.324047, 0.324985]
-rmse_stl_tau_test = [0.335405, 0.316552, 0.312698]
 
-r2_mtl_abeta_train = [0.728807, 0.699608, 0.707199]
-r2_mtl_abeta_test = [0.659534, 0.765119, 0.741780]
+accuracy_mtl_aplus_train = [0.8317972350230415, 0.8433179723502304, 0.8732718894009217]
+precision_mtl_aplus_train = [0.8666666666666667, 0.8775510204081632, 0.8947368421052632]
+recall_mtl_aplus_train = [0.7824074074074074, 0.7962962962962963, 0.85]
+f1_mtl_aplus_train = [0.8223844282238443, 0.8349514563106796, 0.8717948717948718]
+auroc_mtl_aplus_train = [0.831570676180768, 0.8431022765885151, 0.8735981308411216]
 
-mse_mtl_abeta_train = [56904.460, 61246.420, 60774.459]
-mse_mtl_abeta_test = [72160.119, 54871.950, 56751.135]
+accuracy_mtl_aplus_test = [0.7706422018348624, 0.7798165137614679, 0.8256880733944955]
+precision_mtl_aplus_test = [0.7872340425531915, 0.8181818181818182, 0.8372093023255814]
+recall_mtl_aplus_test = [0.7115384615384616, 0.6923076923076923, 0.75]
+f1_mtl_aplus_test = [0.7474747474747475, 0.7500000000000001, 0.7912087912087912]
+auroc_mtl_aplus_test = [0.7680499325236168, 0.7759784075573549, 0.8176229508196722]
 
-rmse_mtl_abeta_train = [238.457, 247.480, 246.525]
-rmse_mtl_abeta_test = [268.626, 234.248, 238.225]
 
-r2_mtl_ptau_train = [0.578396, 0.574439, 0.577234]
-r2_mtl_ptau_test = [0.546992, 0.559848, 0.551262]
 
-mse_mtl_ptau_train = [0.101163, 0.100154, 0.101502]
-mse_mtl_ptau_test = [0.110792, 0.114807, 0.109440]
+accuracy_mtl_tplus_train = [0.9262672811059908, 0.9101382488479263, 0.8847926267281107]
+precision_mtl_tplus_train = [0.9635416666666666, 0.9195979899497487, 0.9230769230769231]
+recall_mtl_tplus_train = [0.8809523809523809, 0.8883495145631068, 0.8372093023255814]
+f1_mtl_tplus_train = [0.9203980099502488, 0.9037037037037038, 0.878048780487805]
+auroc_mtl_tplus_train = [0.9248511904761905, 0.9090870379833078, 0.8843580758203249]
 
-rmse_mtl_ptau_train = [0.318061, 0.316472, 0.318594]
-rmse_mtl_ptau_test = [0.332954, 0.338831, 0.330817]
+accuracy_mtl_tplus_test = [0.8532110091743119, 0.8990825688073395, 0.908256880733945]
+precision_mtl_tplus_test = [0.8888888888888888, 0.9782608695652174, 0.9090909090909091]
+recall_mtl_tplus_test = [0.7843137254901961, 0.8181818181818182, 0.8695652173913043]
+f1_mtl_tplus_test = [0.8333333333333334, 0.8910891089108911, 0.888888888888889]
+auroc_mtl_tplus_test = [0.8490534144692359, 0.89983164983165, 0.9030365769496204]
 
-r2_mtl_tau_train = [0.524212, 0.515629, 0.521129]
-r2_mtl_tau_test = [0.485312, 0.514786, 0.497639]
 
-mse_mtl_tau_train = [0.094507, 0.092842, 0.095563]
-mse_mtl_tau_test = [0.100601, 0.107228, 0.096395]
 
-rmse_mtl_tau_train = [0.307419, 0.304700, 0.309132]
-rmse_mtl_tau_test = [0.317177, 0.327456, 0.310476]
+accuracy_mtl_nplus_train = [0.8986175115207373, 0.8917050691244239, 0.9055299539170507]
+precision_mtl_nplus_train = [0.9105263157894737, 0.8917525773195877, 0.9014778325123153]
+recall_mtl_nplus_train = [0.865, 0.8693467336683417, 0.8970588235294118]
+f1_mtl_nplus_train = [0.8871794871794871, 0.8804071246819339, 0.8992628992628993]
+auroc_mtl_nplus_train = [0.8961752136752138, 0.8899925157703411, 0.9050511508951407]
 
-_, p_value_abeta_r2 = stats.ttest_rel(r2_stl_abeta_test, r2_mtl_abeta_test)
-_, p_value_ptau_r2 = stats.ttest_rel(r2_stl_ptau_test, r2_mtl_ptau_test)
-_, p_value_tau_r2 = stats.ttest_rel(r2_stl_tau_test, r2_mtl_tau_test)
+accuracy_mtl_nplus_test = [0.8440366972477065, 0.8807339449541285, 0.926605504587156]
+precision_mtl_nplus_test = [0.8666666666666667, 0.9130434782608695, 0.975]
+recall_mtl_nplus_test = [0.78, 0.8235294117647058, 0.8478260869565217]
+f1_mtl_nplus_test = [0.8210526315789474, 0.865979381443299, 0.9069767441860466]
+auroc_mtl_nplus_test = [0.8391525423728815, 0.8772819472616632, 0.915976535541753]
 
-print(f"p-value based on R2 score for STL vs MTL ABETA prediction: {p_value_abeta_r2:2f}")
-print(f"p-value based on R2 score for STL vs MTL PTAU prediction: {p_value_ptau_r2:2f}")
-print(f"p-value based on R2 score for STL vs MTL TAU prediction: {p_value_tau_r2:2f}")
 
-_, p_value_abeta_mse = stats.ttest_rel(mse_stl_abeta_test, mse_mtl_abeta_test)
-_, p_value_ptau_mse = stats.ttest_rel(mse_stl_ptau_test, mse_mtl_ptau_test)
-_, p_value_tau_mse = stats.ttest_rel(mse_stl_tau_test, mse_mtl_tau_test)
+_, p_value_aplus_accuracy_train = stats.ttest_rel(accuracy_stl_aplus_train, accuracy_mtl_aplus_train)
+_, p_value_aplus_precision_train = stats.ttest_rel(precision_stl_aplus_train, precision_mtl_aplus_train)
+_, p_value_aplus_recall_train = stats.ttest_rel(recall_stl_aplus_train, recall_mtl_aplus_train)
+_, p_value_aplus_f1_train = stats.ttest_rel(f1_stl_aplus_train, f1_mtl_aplus_train)
+_, p_value_aplus_auroc_train = stats.ttest_rel(auroc_stl_aplus_train, auroc_mtl_aplus_train)
 
-print(f"p-value based on MSE for STL vs MTL ABETA prediction: {p_value_abeta_mse:2f}")
-print(f"p-value based on MSE for STL vs MTL PTAU prediction: {p_value_ptau_mse:2f}")
-print(f"p-value based on MSE for STL vs MTL TAU prediction: {p_value_tau_mse:2f}")
+_, p_value_aplus_accuracy_test = stats.ttest_rel(accuracy_stl_aplus_test, accuracy_mtl_aplus_test)
+_, p_value_aplus_precision_test = stats.ttest_rel(precision_stl_aplus_test, precision_mtl_aplus_test)
+_, p_value_aplus_recall_test = stats.ttest_rel(recall_stl_aplus_test, recall_mtl_aplus_test)
+_, p_value_aplus_f1_test = stats.ttest_rel(f1_stl_aplus_test, f1_mtl_aplus_test)
+_, p_value_aplus_auroc_test = stats.ttest_rel(auroc_stl_aplus_test, auroc_mtl_aplus_test)
+print('' + '-' * 50)
+print(f"Training set p-value based on Accuracy for STL vs MTL A+ prediction: {p_value_aplus_accuracy_train:2f}")
+print(f"Training set p-value based on Precision for STL vs MTL A+ prediction: {p_value_aplus_precision_train:2f}")
+print(f"Training set p-value based on Recall for STL vs MTL A+ prediction: {p_value_aplus_recall_train:2f}")
+print(f"Training set p-value based on F1 for STL vs MTL A+ prediction: {p_value_aplus_f1_train:2f}")
+print(f"Training set p-value based on AUROC for STL vs MTL A+ prediction: {p_value_aplus_auroc_train:2f}")
+print()
+print(f"Test set p-value based on Accuracy for STL vs MTL A+ prediction: {p_value_aplus_accuracy_test:2f}")
+print(f"Test set p-value based on Precision for STL vs MTL A+ prediction: {p_value_aplus_precision_test:2f}")
+print(f"Test set p-value based on Recall for STL vs MTL A+ prediction: {p_value_aplus_recall_test:2f}")
+print(f"Test set p-value based on F1 for STL vs MTL A+ prediction: {p_value_aplus_f1_test:2f}")
+print(f"Test set p-value based on AUROC for STL vs MTL A+ prediction: {p_value_aplus_auroc_test:2f}")
+print('' + '-' * 50)
 
-_, p_value_abeta_rmse = stats.ttest_rel(rmse_stl_abeta_test, rmse_mtl_abeta_test)
-_, p_value_ptau_rmse = stats.ttest_rel(rmse_stl_ptau_test, rmse_mtl_ptau_test)
-_, p_value_tau_rmse = stats.ttest_rel(rmse_stl_tau_test, rmse_mtl_tau_test)
-print(f"p-value based on RMSE for STL vs MTL ABETA prediction: {p_value_abeta_rmse:2f}")
-print(f"p-value based on RMSE for STL vs MTL PTAU prediction: {p_value_ptau_rmse:2f}")
-print(f"p-value based on RMSE for STL vs MTL TAU prediction: {p_value_tau_rmse:2f}")
+_, p_value_tplus_accuracy_train = stats.ttest_rel(accuracy_stl_tplus_train, accuracy_mtl_tplus_train)
+_, p_value_tplus_precision_train = stats.ttest_rel(precision_stl_tplus_train, precision_mtl_tplus_train)
+_, p_value_tplus_recall_train = stats.ttest_rel(recall_stl_tplus_train, recall_mtl_tplus_train)
+_, p_value_tplus_f1_train = stats.ttest_rel(f1_stl_tplus_train, f1_mtl_tplus_train)
+_, p_value_tplus_auroc_train = stats.ttest_rel(auroc_stl_tplus_train, auroc_mtl_tplus_train)
 
-# p-value based on R2 score for STL vs MTL ABETA prediction: 0.504942
-# p-value based on R2 score for STL vs MTL PTAU prediction: 0.136235
-# p-value based on R2 score for STL vs MTL TAU prediction: 0.158651
-# p-value based on MSE for STL vs MTL ABETA prediction: 0.469156
-# p-value based on MSE for STL vs MTL PTAU prediction: 0.209377
-# p-value based on MSE for STL vs MTL TAU prediction: 0.739685
-# p-value based on RMSE for STL vs MTL ABETA prediction: 0.469862
-# p-value based on RMSE for STL vs MTL PTAU prediction: 0.208797
-# p-value based on RMSE for STL vs MTL TAU prediction: 0.741932
+_, p_value_tplus_accuracy_test = stats.ttest_rel(accuracy_stl_tplus_test, accuracy_mtl_tplus_test)
+_, p_value_tplus_precision_test = stats.ttest_rel(precision_stl_tplus_test, precision_mtl_tplus_test)
+_, p_value_tplus_recall_test = stats.ttest_rel(recall_stl_tplus_test, recall_mtl_tplus_test)
+_, p_value_tplus_f1_test = stats.ttest_rel(f1_stl_tplus_test, f1_mtl_tplus_test)
+_, p_value_tplus_auroc_test = stats.ttest_rel(auroc_stl_tplus_test, auroc_mtl_tplus_test)
+print('' + '-' * 50)
+print(f"Training set p-value based on Accuracy for STL vs MTL T+ prediction: {p_value_tplus_accuracy_train:2f}")
+print(f"Training set p-value based on Precision for STL vs MTL T+ prediction: {p_value_tplus_precision_train:2f}")
+print(f"Training set p-value based on Recall for STL vs MTL T+ prediction: {p_value_tplus_recall_train:2f}")
+print(f"Training set p-value based on F1 for STL vs MTL T+ prediction: {p_value_tplus_f1_train:2f}")
+print(f"Training set p-value based on AUROC for STL vs MTL T+ prediction: {p_value_tplus_auroc_train:2f}")
+print()
+print(f"Test set p-value based on Accuracy for STL vs MTL T+ prediction: {p_value_tplus_accuracy_test:2f}")
+print(f"Test set p-value based on Precision for STL vs MTL T+ prediction: {p_value_tplus_precision_test:2f}")
+print(f"Test set p-value based on Recall for STL vs MTL T+ prediction: {p_value_tplus_recall_test:2f}")
+print(f"Test set p-value based on F1 for STL vs MTL T+ prediction: {p_value_tplus_f1_test:2f}")
+print(f"Test set p-value based on AUROC for STL vs MTL T+ prediction: {p_value_tplus_auroc_test:2f}")
+print('' + '-' * 50)
 
-r2_mean_abeta_stl, r2_error_bar_abeta_stl = stats.tmean(r2_stl_abeta_train), stats.sem(r2_stl_abeta_train)
-r2_mean_abeta_mtl, r2_error_bar_abeta_mtl = stats.tmean(r2_mtl_abeta_train), stats.sem(r2_mtl_abeta_train)
-r2_mean_ptau_stl, r2_error_bar_ptau_stl = stats.tmean(r2_stl_ptau_train), stats.sem(r2_stl_ptau_train)
-r2_mean_ptau_mtl, r2_error_bar_ptau_mtl = stats.tmean(r2_mtl_ptau_train), stats.sem(r2_mtl_ptau_train)
-r2_mean_tau_stl, r2_error_bar_tau_stl = stats.tmean(r2_stl_tau_train), stats.sem(r2_stl_tau_train)
-r2_mean_tau_mtl, r2_error_bar_tau_mtl = stats.tmean(r2_mtl_tau_train), stats.sem(r2_mtl_tau_train)
+_, p_value_nplus_accuracy_train = stats.ttest_rel(accuracy_stl_nplus_train, accuracy_mtl_nplus_train)
+_, p_value_nplus_precision_train = stats.ttest_rel(precision_stl_nplus_train, precision_mtl_nplus_train)
+_, p_value_nplus_recall_train = stats.ttest_rel(recall_stl_nplus_train, recall_mtl_nplus_train)
+_, p_value_nplus_f1_train = stats.ttest_rel(f1_stl_nplus_train, f1_mtl_nplus_train)
+_, p_value_nplus_auroc_train = stats.ttest_rel(auroc_stl_nplus_train, auroc_mtl_nplus_train)
 
-mse_mean_abeta_stl, mse_error_bar_abeta_stl = stats.tmean(mse_stl_abeta_train), stats.sem(mse_stl_abeta_train)
-mse_mean_abeta_mtl, mse_error_bar_abeta_mtl = stats.tmean(mse_mtl_abeta_train), stats.sem(mse_mtl_abeta_train)
-mse_mean_ptau_stl, mse_error_bar_ptau_stl = stats.tmean(mse_stl_ptau_train), stats.sem(mse_stl_ptau_train)
-mse_mean_ptau_mtl, mse_error_bar_ptau_mtl = stats.tmean(mse_mtl_ptau_train), stats.sem(mse_mtl_ptau_train)
-mse_mean_tau_stl, mse_error_bar_tau_stl = stats.tmean(mse_stl_tau_train), stats.sem(mse_stl_tau_train)
-mse_mean_tau_mtl, mse_error_bar_tau_mtl = stats.tmean(mse_mtl_tau_train), stats.sem(mse_mtl_tau_train)
-
-rmse_mean_abeta_stl, rmse_error_bar_abeta_stl = stats.tmean(rmse_stl_abeta_train), stats.sem(rmse_stl_abeta_train)
-rmse_mean_abeta_mtl, rmse_error_bar_abeta_mtl = stats.tmean(rmse_mtl_abeta_train), stats.sem(rmse_mtl_abeta_train)
-rmse_mean_ptau_stl, rmse_error_bar_ptau_stl = stats.tmean(rmse_stl_ptau_train), stats.sem(rmse_stl_ptau_train)
-rmse_mean_ptau_mtl, rmse_error_bar_ptau_mtl = stats.tmean(rmse_mtl_ptau_train), stats.sem(rmse_mtl_ptau_train)
-rmse_mean_tau_stl, rmse_error_bar_tau_stl = stats.tmean(rmse_stl_tau_train), stats.sem(rmse_stl_tau_train)
-rmse_mean_tau_mtl, rmse_error_bar_tau_mtl = stats.tmean(rmse_mtl_tau_train), stats.sem(rmse_mtl_tau_train)
+_, p_value_nplus_accuracy_test = stats.ttest_rel(accuracy_stl_nplus_test, accuracy_mtl_nplus_test)
+_, p_value_nplus_precision_test = stats.ttest_rel(precision_stl_nplus_test, precision_mtl_nplus_test)
+_, p_value_nplus_recall_test = stats.ttest_rel(recall_stl_nplus_test, recall_mtl_nplus_test)
+_, p_value_nplus_f1_test = stats.ttest_rel(f1_stl_nplus_test, f1_mtl_nplus_test)
+_, p_value_nplus_auroc_test = stats.ttest_rel(auroc_stl_nplus_test, auroc_mtl_nplus_test)
 
 print('' + '-' * 50)
-print(f"R2 ABETA STL: {r2_mean_abeta_stl:.4f} ± {r2_error_bar_abeta_stl:.4f}")
-print(f"R2 ABETA MTL: {r2_mean_abeta_mtl:.4f} ± {r2_error_bar_abeta_mtl:.4f}")
-print(f"R2 PTAU STL: {r2_mean_ptau_stl:.4f} ± {r2_error_bar_ptau_stl:.4f}")
-print(f"R2 PTAU MTL: {r2_mean_ptau_mtl:.4f} ± {r2_error_bar_ptau_mtl:.4f}")
-print(f"R2 TAU STL: {r2_mean_tau_stl:.4f} ± {r2_error_bar_tau_stl:.4f}")
-print(f"R2 TAU MTL: {r2_mean_tau_mtl:.4f} ± {r2_error_bar_tau_mtl:.4f}")
+print(f"Training set p-value based on Accuracy for STL vs MTL N+ prediction: {p_value_nplus_accuracy_train:2f}")
+print(f"Training set p-value based on Precision for STL vs MTL N+ prediction: {p_value_nplus_precision_train:2f}")
+print(f"Training set p-value based on Recall for STL vs MTL N+ prediction: {p_value_nplus_recall_train:2f}")
+print(f"Training set p-value based on F1 for STL vs MTL N+ prediction: {p_value_nplus_f1_train:2f}")
+print(f"Training set p-value based on AUROC for STL vs MTL N+ prediction: {p_value_nplus_auroc_train:2f}")
+print()
+print(f"Test set p-value based on Accuracy for STL vs MTL N+ prediction: {p_value_nplus_accuracy_test:2f}")
+print(f"Test set p-value based on Precision for STL vs MTL N+ prediction: {p_value_nplus_precision_test:2f}")
+print(f"Test set p-value based on Recall for STL vs MTL N+ prediction: {p_value_nplus_recall_test:2f}")
+print(f"Test set p-value based on F1 for STL vs MTL N+ prediction: {p_value_nplus_f1_test:2f}")
+print(f"Test set p-value based on AUROC for STL vs MTL N+ prediction: {p_value_nplus_auroc_test:2f}")
 print('' + '-' * 50)
-print(f"MSE ABETA STL: {mse_mean_abeta_stl:.4f} ± {mse_error_bar_abeta_stl:.4f}")
-print(f"MSE ABETA MTL: {mse_mean_abeta_mtl:.4f} ± {mse_error_bar_abeta_mtl:.4f}")
-print(f"MSE PTAU STL: {mse_mean_ptau_stl:.4f} ± {mse_error_bar_ptau_stl:.4f}")
-print(f"MSE PTAU MTL: {mse_mean_ptau_mtl:.4f} ± {mse_error_bar_ptau_mtl:.4f}")
-print(f"MSE TAU STL: {mse_mean_tau_stl:.4f} ± {mse_error_bar_tau_stl:.4f}")
-print(f"MSE TAU MTL: {mse_mean_tau_mtl:.4f} ± {mse_error_bar_tau_mtl:.4f}")
+
+
+
+
+
+
+
+
+
+
+
+
+mean_train_accuracy_stl_aplus, error_bar_train_accuracy_stl_aplus = stats.tmean(accuracy_stl_aplus_train), stats.sem(accuracy_stl_aplus_train)
+mean_train_precision_stl_aplus, error_bar_train_precision_stl_aplus = stats.tmean(precision_stl_aplus_train), stats.sem(precision_stl_aplus_train)
+mean_train_recall_stl_aplus, error_bar_train_recall_stl_aplus = stats.tmean(recall_stl_aplus_train), stats.sem(recall_stl_aplus_train)
+mean_train_f1_stl_aplus, error_bar_train_f1_stl_aplus = stats.tmean(f1_stl_aplus_train), stats.sem(f1_stl_aplus_train)
+mean_train_auroc_stl_aplus, error_bar_train_auroc_stl_aplus = stats.tmean(auroc_stl_aplus_train), stats.sem(auroc_stl_aplus_train)
+
+mean_test_accuracy_stl_aplus, error_bar_test_accuracy_stl_aplus = stats.tmean(accuracy_stl_aplus_test), stats.sem(accuracy_stl_aplus_test)
+mean_test_precision_stl_aplus, error_bar_test_precision_stl_aplus = stats.tmean(precision_stl_aplus_test), stats.sem(precision_stl_aplus_test)
+mean_test_recall_stl_aplus, error_bar_test_recall_stl_aplus = stats.tmean(recall_stl_aplus_test), stats.sem(recall_stl_aplus_test)
+mean_test_f1_stl_aplus, error_bar_test_f1_stl_aplus = stats.tmean(f1_stl_aplus_test), stats.sem(f1_stl_aplus_test)
+mean_test_auroc_stl_aplus, error_bar_test_auroc_stl_aplus = stats.tmean(auroc_stl_aplus_test), stats.sem(auroc_stl_aplus_test)
+
 print('' + '-' * 50)
-print(f"RMSE ABETA STL: {rmse_mean_abeta_stl:.4f} ± {rmse_error_bar_abeta_stl:.4f}")
-print(f"RMSE ABETA MTL: {rmse_mean_abeta_mtl:.4f} ± {rmse_error_bar_abeta_mtl:.4f}")
-print(f"RMSE PTAU STL: {rmse_mean_ptau_stl:.4f} ± {rmse_error_bar_ptau_stl:.4f}")
-print(f"RMSE PTAU MTL: {rmse_mean_ptau_mtl:.4f} ± {rmse_error_bar_ptau_mtl:.4f}")
-print(f"RMSE TAU STL: {rmse_mean_tau_stl:.4f} ± {rmse_error_bar_tau_stl:.4f}")
-print(f"RMSE TAU MTL: {rmse_mean_tau_mtl:.4f} ± {rmse_error_bar_tau_mtl:.4f}")
+print(f"Training set mean Accuracy for STL A+ prediction: {mean_train_accuracy_stl_aplus:2f} ± {error_bar_train_accuracy_stl_aplus:2f}")
+print(f"Training set mean Precision for STL A+ prediction: {mean_train_precision_stl_aplus:2f} ± {error_bar_train_precision_stl_aplus:2f}")
+print(f"Training set mean Recall for STL A+ prediction: {mean_train_recall_stl_aplus:2f} ± {error_bar_train_recall_stl_aplus:2f}")
+print(f"Training set mean F1 for STL A+ prediction: {mean_train_f1_stl_aplus:2f} ± {error_bar_train_f1_stl_aplus:2f}")
+print(f"Training set mean AUROC for STL A+ prediction: {mean_train_auroc_stl_aplus:2f} ± {error_bar_train_auroc_stl_aplus:2f}")
+print()
+print(f"Test set mean Accuracy for STL A+ prediction: {mean_test_accuracy_stl_aplus:2f} ± {error_bar_test_accuracy_stl_aplus:2f}")
+print(f"Test set mean Precision for STL A+ prediction: {mean_test_precision_stl_aplus:2f} ± {error_bar_test_precision_stl_aplus:2f}")
+print(f"Test set mean Recall for STL A+ prediction: {mean_test_recall_stl_aplus:2f} ± {error_bar_test_recall_stl_aplus:2f}")
+print(f"Test set mean F1 for STL A+ prediction: {mean_test_f1_stl_aplus:2f} ± {error_bar_test_f1_stl_aplus:2f}")
+print(f"Test set mean AUROC for STL A+ prediction: {mean_test_auroc_stl_aplus:2f} ± {error_bar_test_auroc_stl_aplus:2f}")
+print('' + '-' * 50)
+
+
+mean_train_accuracy_stl_tplus, error_bar_train_accuracy_stl_tplus = stats.tmean(accuracy_stl_tplus_train), stats.sem(accuracy_stl_tplus_train)
+mean_train_precision_stl_tplus, error_bar_train_precision_stl_tplus = stats.tmean(precision_stl_tplus_train), stats.sem(precision_stl_tplus_train)
+mean_train_recall_stl_tplus, error_bar_train_recall_stl_tplus = stats.tmean(recall_stl_tplus_train), stats.sem(recall_stl_tplus_train)
+mean_train_f1_stl_tplus, error_bar_train_f1_stl_tplus = stats.tmean(f1_stl_tplus_train), stats.sem(f1_stl_tplus_train)
+mean_train_auroc_stl_tplus, error_bar_train_auroc_stl_tplus = stats.tmean(auroc_stl_tplus_train), stats.sem(auroc_stl_tplus_train)
+
+mean_test_accuracy_stl_tplus, error_bar_test_accuracy_stl_tplus = stats.tmean(accuracy_stl_tplus_test), stats.sem(accuracy_stl_tplus_test)
+mean_test_precision_stl_tplus, error_bar_test_precision_stl_tplus = stats.tmean(precision_stl_tplus_test), stats.sem(precision_stl_tplus_test)
+mean_test_recall_stl_tplus, error_bar_test_recall_stl_tplus = stats.tmean(recall_stl_tplus_test), stats.sem(recall_stl_tplus_test)
+mean_test_f1_stl_tplus, error_bar_test_f1_stl_tplus = stats.tmean(f1_stl_tplus_test), stats.sem(f1_stl_tplus_test)
+mean_test_auroc_stl_tplus, error_bar_test_auroc_stl_tplus = stats.tmean(auroc_stl_tplus_test), stats.sem(auroc_stl_tplus_test)
+
+print('' + '-' * 50)
+print(f"Training set mean Accuracy for STL T+ prediction: {mean_train_accuracy_stl_tplus:2f} ± {error_bar_train_accuracy_stl_tplus:2f}")
+print(f"Training set mean Precision for STL T+ prediction: {mean_train_precision_stl_tplus:2f} ± {error_bar_train_precision_stl_tplus:2f}")
+print(f"Training set mean Recall for STL T+ prediction: {mean_train_recall_stl_tplus:2f} ± {error_bar_train_recall_stl_tplus:2f}")
+print(f"Training set mean F1 for STL T+ prediction: {mean_train_f1_stl_tplus:2f} ± {error_bar_train_f1_stl_tplus:2f}")
+print(f"Training set mean AUROC for STL T+ prediction: {mean_train_auroc_stl_tplus:2f} ± {error_bar_train_auroc_stl_tplus:2f}")
+print()
+print(f"Test set mean Accuracy for STL T+ prediction: {mean_test_accuracy_stl_tplus:2f} ± {error_bar_test_accuracy_stl_tplus:2f}")
+print(f"Test set mean Precision for STL T+ prediction: {mean_test_precision_stl_tplus:2f} ± {error_bar_test_precision_stl_tplus:2f}")
+print(f"Test set mean Recall for STL T+ prediction: {mean_test_recall_stl_tplus:2f} ± {error_bar_test_recall_stl_tplus:2f}")
+print(f"Test set mean F1 for STL T+ prediction: {mean_test_f1_stl_tplus:2f} ± {error_bar_test_f1_stl_tplus:2f}")
+print(f"Test set mean AUROC for STL T+ prediction: {mean_test_auroc_stl_tplus:2f} ± {error_bar_test_auroc_stl_tplus:2f}")
+print('' + '-' * 50)
+
+
+mean_train_accuracy_stl_nplus, error_bar_train_accuracy_stl_nplus = stats.tmean(accuracy_stl_nplus_train), stats.sem(accuracy_stl_nplus_train)
+mean_train_precision_stl_nplus, error_bar_train_precision_stl_nplus = stats.tmean(precision_stl_nplus_train), stats.sem(precision_stl_nplus_train)
+mean_train_recall_stl_nplus, error_bar_train_recall_stl_nplus = stats.tmean(recall_stl_nplus_train), stats.sem(recall_stl_nplus_train)
+mean_train_f1_stl_nplus, error_bar_train_f1_stl_nplus = stats.tmean(f1_stl_nplus_train), stats.sem(f1_stl_nplus_train)
+mean_train_auroc_stl_nplus, error_bar_train_auroc_stl_nplus = stats.tmean(auroc_stl_nplus_train), stats.sem(auroc_stl_nplus_train)
+
+mean_test_accuracy_stl_nplus, error_bar_test_accuracy_stl_nplus = stats.tmean(accuracy_stl_nplus_test), stats.sem(accuracy_stl_nplus_test)
+mean_test_precision_stl_nplus, error_bar_test_precision_stl_nplus = stats.tmean(precision_stl_nplus_test), stats.sem(precision_stl_nplus_test)
+mean_test_recall_stl_nplus, error_bar_test_recall_stl_nplus = stats.tmean(recall_stl_nplus_test), stats.sem(recall_stl_nplus_test)
+mean_test_f1_stl_nplus, error_bar_test_f1_stl_nplus = stats.tmean(f1_stl_nplus_test), stats.sem(f1_stl_nplus_test)
+mean_test_auroc_stl_nplus, error_bar_test_auroc_stl_nplus = stats.tmean(auroc_stl_nplus_test), stats.sem(auroc_stl_nplus_test)
+
+print('' + '-' * 50)
+print(f"Training set mean Accuracy for STL N+ prediction: {mean_train_accuracy_stl_nplus:2f} ± {error_bar_train_accuracy_stl_nplus:2f}")
+print(f"Training set mean Precision for STL N+ prediction: {mean_train_precision_stl_nplus:2f} ± {error_bar_train_precision_stl_nplus:2f}")
+print(f"Training set mean Recall for STL N+ prediction: {mean_train_recall_stl_nplus:2f} ± {error_bar_train_recall_stl_nplus:2f}")
+print(f"Training set mean F1 for STL N+ prediction: {mean_train_f1_stl_nplus:2f} ± {error_bar_train_f1_stl_nplus:2f}")
+print(f"Training set mean AUROC for STL N+ prediction: {mean_train_auroc_stl_nplus:2f} ± {error_bar_train_auroc_stl_nplus:2f}")
+print()
+print(f"Test set mean Accuracy for STL N+ prediction: {mean_test_accuracy_stl_nplus:2f} ± {error_bar_test_accuracy_stl_nplus:2f}")
+print(f"Test set mean Precision for STL N+ prediction: {mean_test_precision_stl_nplus:2f} ± {error_bar_test_precision_stl_nplus:2f}")
+print(f"Test set mean Recall for STL N+ prediction: {mean_test_recall_stl_nplus:2f} ± {error_bar_test_recall_stl_nplus:2f}")
+print(f"Test set mean F1 for STL N+ prediction: {mean_test_f1_stl_nplus:2f} ± {error_bar_test_f1_stl_nplus:2f}")
+print(f"Test set mean AUROC for STL N+ prediction: {mean_test_auroc_stl_nplus:2f} ± {error_bar_test_auroc_stl_nplus:2f}")
+print('' + '-' * 50)
+
+
+
+mean_train_accuracy_mtl_aplus, error_bar_train_accuracy_mtl_aplus = stats.tmean(accuracy_mtl_aplus_train), stats.sem(accuracy_mtl_aplus_train)
+mean_train_precision_mtl_aplus, error_bar_train_precision_mtl_aplus = stats.tmean(precision_mtl_aplus_train), stats.sem(precision_mtl_aplus_train)
+mean_train_recall_mtl_aplus, error_bar_train_recall_mtl_aplus = stats.tmean(recall_mtl_aplus_train), stats.sem(recall_mtl_aplus_train)
+mean_train_f1_mtl_aplus, error_bar_train_f1_mtl_aplus = stats.tmean(f1_mtl_aplus_train), stats.sem(f1_mtl_aplus_train)
+mean_train_auroc_mtl_aplus, error_bar_train_auroc_mtl_aplus = stats.tmean(auroc_mtl_aplus_train), stats.sem(auroc_mtl_aplus_train)
+
+mean_test_accuracy_mtl_aplus, error_bar_test_accuracy_mtl_aplus = stats.tmean(accuracy_mtl_aplus_test), stats.sem(accuracy_mtl_aplus_test)
+mean_test_precision_mtl_aplus, error_bar_test_precision_mtl_aplus = stats.tmean(precision_mtl_aplus_test), stats.sem(precision_mtl_aplus_test)
+mean_test_recall_mtl_aplus, error_bar_test_recall_mtl_aplus = stats.tmean(recall_mtl_aplus_test), stats.sem(recall_mtl_aplus_test)
+mean_test_f1_mtl_aplus, error_bar_test_f1_mtl_aplus = stats.tmean(f1_mtl_aplus_test), stats.sem(f1_mtl_aplus_test)
+mean_test_auroc_mtl_aplus, error_bar_test_auroc_mtl_aplus = stats.tmean(auroc_mtl_aplus_test), stats.sem(auroc_mtl_aplus_test)
+
+print('' + '-' * 50)
+print(f"Training set mean Accuracy for MTL A+ prediction: {mean_train_accuracy_mtl_aplus:2f} ± {error_bar_train_accuracy_mtl_aplus:2f}")
+print(f"Training set mean Precision for MTL A+ prediction: {mean_train_precision_mtl_aplus:2f} ± {error_bar_train_precision_mtl_aplus:2f}")
+print(f"Training set mean Recall for MTL A+ prediction: {mean_train_recall_mtl_aplus:2f} ± {error_bar_train_recall_mtl_aplus:2f}")
+print(f"Training set mean F1 for MTL A+ prediction: {mean_train_f1_mtl_aplus:2f} ± {error_bar_train_f1_mtl_aplus:2f}")
+print(f"Training set mean AUROC for MTL A+ prediction: {mean_train_auroc_mtl_aplus:2f} ± {error_bar_train_auroc_mtl_aplus:2f}")
+print()
+print(f"Test set mean Accuracy for MTL A+ prediction: {mean_test_accuracy_mtl_aplus:2f} ± {error_bar_test_accuracy_mtl_aplus:2f}")
+print(f"Test set mean Precision for MTL A+ prediction: {mean_test_precision_mtl_aplus:2f} ± {error_bar_test_precision_mtl_aplus:2f}")
+print(f"Test set mean Recall for MTL A+ prediction: {mean_test_recall_mtl_aplus:2f} ± {error_bar_test_recall_mtl_aplus:2f}")
+print(f"Test set mean F1 for MTL A+ prediction: {mean_test_f1_mtl_aplus:2f} ± {error_bar_test_f1_mtl_aplus:2f}")
+print(f"Test set mean AUROC for MTL A+ prediction: {mean_test_auroc_mtl_aplus:2f} ± {error_bar_test_auroc_mtl_aplus:2f}")
+print('' + '-' * 50)
+
+
+mean_train_accuracy_mtl_tplus, error_bar_train_accuracy_mtl_tplus = stats.tmean(accuracy_mtl_tplus_train), stats.sem(accuracy_mtl_tplus_train)
+mean_train_precision_mtl_tplus, error_bar_train_precision_mtl_tplus = stats.tmean(precision_mtl_tplus_train), stats.sem(precision_mtl_tplus_train)
+mean_train_recall_mtl_tplus, error_bar_train_recall_mtl_tplus = stats.tmean(recall_mtl_tplus_train), stats.sem(recall_mtl_tplus_train)
+mean_train_f1_mtl_tplus, error_bar_train_f1_mtl_tplus = stats.tmean(f1_mtl_tplus_train), stats.sem(f1_mtl_tplus_train)
+mean_train_auroc_mtl_tplus, error_bar_train_auroc_mtl_tplus = stats.tmean(auroc_mtl_tplus_train), stats.sem(auroc_mtl_tplus_train)
+
+mean_test_accuracy_mtl_tplus, error_bar_test_accuracy_mtl_tplus = stats.tmean(accuracy_mtl_tplus_test), stats.sem(accuracy_mtl_tplus_test)
+mean_test_precision_mtl_tplus, error_bar_test_precision_mtl_tplus = stats.tmean(precision_mtl_tplus_test), stats.sem(precision_mtl_tplus_test)
+mean_test_recall_mtl_tplus, error_bar_test_recall_mtl_tplus = stats.tmean(recall_mtl_tplus_test), stats.sem(recall_mtl_tplus_test)
+mean_test_f1_mtl_tplus, error_bar_test_f1_mtl_tplus = stats.tmean(f1_mtl_tplus_test), stats.sem(f1_mtl_tplus_test)
+mean_test_auroc_mtl_tplus, error_bar_test_auroc_mtl_tplus = stats.tmean(auroc_mtl_tplus_test), stats.sem(auroc_mtl_tplus_test)
+
+print('' + '-' * 50)
+print(f"Training set mean Accuracy for MTL T+ prediction: {mean_train_accuracy_mtl_tplus:2f} ± {error_bar_train_accuracy_mtl_tplus:2f}")
+print(f"Training set mean Precision for MTL T+ prediction: {mean_train_precision_mtl_tplus:2f} ± {error_bar_train_precision_mtl_tplus:2f}")
+print(f"Training set mean Recall for MTL T+ prediction: {mean_train_recall_mtl_tplus:2f} ± {error_bar_train_recall_mtl_tplus:2f}")
+print(f"Training set mean F1 for MTL T+ prediction: {mean_train_f1_mtl_tplus:2f} ± {error_bar_train_f1_mtl_tplus:2f}")
+print(f"Training set mean AUROC for MTL T+ prediction: {mean_train_auroc_mtl_tplus:2f} ± {error_bar_train_auroc_mtl_tplus:2f}")
+print()
+print(f"Test set mean Accuracy for MTL T+ prediction: {mean_test_accuracy_mtl_tplus:2f} ± {error_bar_test_accuracy_mtl_tplus:2f}")
+print(f"Test set mean Precision for MTL T+ prediction: {mean_test_precision_mtl_tplus:2f} ± {error_bar_test_precision_mtl_tplus:2f}")
+print(f"Test set mean Recall for MTL T+ prediction: {mean_test_recall_mtl_tplus:2f} ± {error_bar_test_recall_mtl_tplus:2f}")
+print(f"Test set mean F1 for MTL T+ prediction: {mean_test_f1_mtl_tplus:2f} ± {error_bar_test_f1_mtl_tplus:2f}")
+print(f"Test set mean AUROC for MTL T+ prediction: {mean_test_auroc_mtl_tplus:2f} ± {error_bar_test_auroc_mtl_tplus:2f}")
+print('' + '-' * 50)
+
+
+mean_train_accuracy_mtl_nplus, error_bar_train_accuracy_mtl_nplus = stats.tmean(accuracy_mtl_nplus_train), stats.sem(accuracy_mtl_nplus_train)
+mean_train_precision_mtl_nplus, error_bar_train_precision_mtl_nplus = stats.tmean(precision_mtl_nplus_train), stats.sem(precision_mtl_nplus_train)
+mean_train_recall_mtl_nplus, error_bar_train_recall_mtl_nplus = stats.tmean(recall_mtl_nplus_train), stats.sem(recall_mtl_nplus_train)
+mean_train_f1_mtl_nplus, error_bar_train_f1_mtl_nplus = stats.tmean(f1_mtl_nplus_train), stats.sem(f1_mtl_nplus_train)
+mean_train_auroc_mtl_nplus, error_bar_train_auroc_mtl_nplus = stats.tmean(auroc_mtl_nplus_train), stats.sem(auroc_mtl_nplus_train)
+
+mean_test_accuracy_mtl_nplus, error_bar_test_accuracy_mtl_nplus = stats.tmean(accuracy_mtl_nplus_test), stats.sem(accuracy_mtl_nplus_test)
+
+mean_test_precision_mtl_nplus, error_bar_test_precision_mtl_nplus = stats.tmean(precision_mtl_nplus_test), stats.sem(precision_mtl_nplus_test)
+mean_test_recall_mtl_nplus, error_bar_test_recall_mtl_nplus = stats.tmean(recall_mtl_nplus_test), stats.sem(recall_mtl_nplus_test)
+mean_test_f1_mtl_nplus, error_bar_test_f1_mtl_nplus = stats.tmean(f1_mtl_nplus_test), stats.sem(f1_mtl_nplus_test)
+mean_test_auroc_mtl_nplus, error_bar_test_auroc_mtl_nplus = stats.tmean(auroc_mtl_nplus_test), stats.sem(auroc_mtl_nplus_test)
+
+print('' + '-' * 50)
+print(f"Training set mean Accuracy for MTL N+ prediction: {mean_train_accuracy_mtl_nplus:2f} ± {error_bar_train_accuracy_mtl_nplus:2f}")
+print(f"Training set mean Precision for MTL N+ prediction: {mean_train_precision_mtl_nplus:2f} ± {error_bar_train_precision_mtl_nplus:2f}")
+print(f"Training set mean Recall for MTL N+ prediction: {mean_train_recall_mtl_nplus:2f} ± {error_bar_train_recall_mtl_nplus:2f}")
+print(f"Training set mean F1 for MTL N+ prediction: {mean_train_f1_mtl_nplus:2f} ± {error_bar_train_f1_mtl_nplus:2f}")
+print(f"Training set mean AUROC for MTL N+ prediction: {mean_train_auroc_mtl_nplus:2f} ± {error_bar_train_auroc_mtl_nplus:2f}")
+print()
+print(f"Test set mean Accuracy for MTL N+ prediction: {mean_test_accuracy_mtl_nplus:2f} ± {error_bar_test_accuracy_mtl_nplus:2f}")
+print(f"Test set mean Precision for MTL N+ prediction: {mean_test_precision_mtl_nplus:2f} ± {error_bar_test_precision_mtl_nplus:2f}")
+print(f"Test set mean Recall for MTL N+ prediction: {mean_test_recall_mtl_nplus:2f} ± {error_bar_test_recall_mtl_nplus:2f}")
+print(f"Test set mean F1 for MTL N+ prediction: {mean_test_f1_mtl_nplus:2f} ± {error_bar_test_f1_mtl_nplus:2f}")
+print(f"Test set mean AUROC for MTL N+ prediction: {mean_test_auroc_mtl_nplus:2f} ± {error_bar_test_auroc_mtl_nplus:2f}")
+print('' + '-' * 50)
