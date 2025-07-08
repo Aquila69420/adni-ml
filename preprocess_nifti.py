@@ -27,9 +27,10 @@ def segment_with_atlas(registered_img, atlas_img, labels):
     segmented = masker.fit_transform(registered_img)
     return masker, segmented
 
+
 def compute_suvr(registered_img, atlas_img):
     masker = NiftiLabelsMasker(labels_img=atlas_img, standardize=True, strategy='sum')
     masked_image = masker.fit_transform(registered_img)
     global_suv = np.sum(masked_image)
-    suvrs = {region: region/global_suv for region in masked_image}
+    suvrs = {masker.region_names_[region_id]: region_value/global_suv for region_id, region_value in zip(masker.region_names_, masked_image)}
     return suvrs
