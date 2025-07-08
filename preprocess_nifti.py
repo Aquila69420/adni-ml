@@ -18,7 +18,7 @@ def find_nifti_files(n3_dir):
 def register_image_to_template(img_path, mni_img):
     """Resample a NIfTI image to the MNI template."""
     img = load_img(img_path)
-    registered_img = resample_to_img(img, mni_img, copy_header=True)
+    registered_img = resample_to_img(img, mni_img)
     return registered_img
 
 def segment_with_atlas(registered_img, atlas_img, labels):
