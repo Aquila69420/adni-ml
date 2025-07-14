@@ -34,3 +34,35 @@ def compute_suvr(registered_img, atlas_img):
     global_suv = np.sum(masked_image)
     suvrs = {masker.region_names_[region_id]: region_value/global_suv for region_id, region_value in zip(masker.region_names_, masked_image)}
     return suvrs
+
+
+def compute_roi_volumes(registered_img, atlas_img):
+    cerebellum_region_ids = [95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]
+    masker = NiftiLabelsMasker(labels_img=atlas_img, standardize=True, strategy='sum')
+    masked_image = masker.fit_transform(registered_img)
+    # Compute the volumes of each region in the masked image
+    affine = masker.labels_img_.affine
+    voxel_volume = abs(np.linalg.det(affine[:3, :3]))  # mm³ per voxel
+
+    # Raw volumes per region_id
+    raw_volumes = {
+        region_id: voxel_sum * voxel_volume
+        for region_id, voxel_sum in zip(masker.region_names_, masked_image)
+    }
+
+    # Total cerebellum volume
+    cereb_vol = sum(
+        raw_volumes[rid]
+        for rid in cerebellum_region_ids
+        if rid in raw_volumes
+    )
+    if cereb_vol == 0:
+        raise ValueError("Cerebellum volume is zero, cannot normalize.")
+
+    # Normalize by cerebellum
+    norm_volumes = {
+        masker.region_names_[rid]: vol / cereb_vol
+        for rid, vol in raw_volumes.items()
+    }
+
+    return norm_volumes
