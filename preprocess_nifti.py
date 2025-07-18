@@ -4,6 +4,8 @@ from nilearn.maskers import NiftiLabelsMasker
 from nilearn.image import load_img, resample_to_img
 from nilearn.datasets import fetch_atlas_aal
 
+cerebellum_region_ids = [95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]
+
 def find_nifti_files(n3_dir):
     """Find all NIfTI files in subsubdirectories under n3_dir."""
     subdirs = [os.path.join(n3_dir, d) for d in os.listdir(n3_dir) if os.path.isdir(os.path.join(n3_dir, d))]
@@ -28,16 +30,35 @@ def segment_with_atlas(registered_img, atlas_img, labels):
     return masker, segmented
 
 
-def compute_suvr(registered_img, atlas_img):
+def compute_suvr(registered_img, atlas_img, is_global = True):
     masker = NiftiLabelsMasker(labels_img=atlas_img, standardize=True, strategy='sum')
     masked_image = masker.fit_transform(registered_img)
-    global_suv = np.sum(masked_image)
-    suvrs = {masker.region_names_[region_id]: region_value/global_suv for region_id, region_value in zip(masker.region_names_, masked_image)}
+    if is_global:
+        global_suv = np.sum(masked_image)
+        suvrs = {masker.region_names_[region_id]: region_value/global_suv for region_id, region_value in zip(masker.region_names_, masked_image)}
+        return suvrs
+    # Build a mapping region_id → summed signal
+    region_ids = list(masker.region_names_.keys())
+    id_to_signal = dict(zip(region_ids, masked_image))
+
+    # Compute sum over just the cerebellum regions
+    cerebellum_suv = sum(
+        id_to_signal[rid]
+        for rid in cerebellum_region_ids
+        if rid in id_to_signal
+    )
+    if cerebellum_suv == 0:
+        raise ValueError("Cerebellum signal is zero; cannot normalize.")
+
+    # Normalize each region’s value by the cerebellum_suv
+    suvrs = {
+        masker.region_names_[rid]: sig / cerebellum_suv
+        for rid, sig in id_to_signal.items()
+    }
     return suvrs
 
 
 def compute_roi_volumes(registered_img, atlas_img):
-    cerebellum_region_ids = [95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]
     masker = NiftiLabelsMasker(labels_img=atlas_img, standardize=True, strategy='sum')
     masked_image = masker.fit_transform(registered_img)
     # Compute the volumes of each region in the masked image
