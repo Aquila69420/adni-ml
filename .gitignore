@@ -4,3 +4,4 @@ data/
 AAL3/
 .idea
 *.png
+*.pickle
